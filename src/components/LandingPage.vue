@@ -1,17 +1,12 @@
 <template>
   <div class="landing-page">
     <DownloadButton class="landing-page__button" />
-    <picture class="landing-page__granny">
-      <source
-        type="image/webp"
-        srcset="../assets/characters/granny_coucou_2048_0092.webp"
-      />
-      <source
-        type="image/png"
-        srcset="../assets/characters/granny_coucou_2048_0092.png"
-      />
-      <img src="../assets/characters/granny_coucou_2048_0092.png" alt="Mamie" />
-    </picture>
+    <WebPicture
+      folder="characters"
+      filename="granny_coucou_2048_0092"
+      alt="Mamie"
+      class="landing-page__granny"
+    />
     <img
       src="../assets/logo_accueil.png"
       alt="Mamie Danger"
@@ -22,10 +17,12 @@
 
 <script>
 import DownloadButton from "./DownloadButton";
+import WebPicture from "./WebPicture";
 
 export default {
   components: {
-    DownloadButton
+    DownloadButton,
+    WebPicture
   },
   name: "LandingPage"
 };
@@ -35,6 +32,8 @@ export default {
 .landing-page {
   height: 100vh;
   background: url("../assets/background/PLAN_1.jpg");
+  background-size: cover;
+  background-position: center;
   overflow: hidden;
   position: relative;
 
@@ -51,10 +50,6 @@ export default {
     width: 45%;
     right: -2%;
     bottom: -10%;
-
-    & > * {
-      width: 100%;
-    }
   }
 
   &__button {

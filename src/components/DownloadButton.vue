@@ -15,7 +15,7 @@
   border-radius: 15px;
   z-index: 1;
 
-  filter: drop-shadow(0px 10px 27px rgba(0, 0, 0, 0.22));
+  filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.4));
 
   &::before,
   &::after {
