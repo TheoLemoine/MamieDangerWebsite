@@ -22,7 +22,14 @@
     <div class="teaser__lower">
       <h1 class="teaser__title">Teaser du jeu</h1>
       <div class="teaser__video">
-        <img src="https://via.placeholder.com/1920x1080" alt="Teaser" />
+        <div class="teaser__video__fitter">
+          <iframe
+            src="https://player.vimeo.com/video/345895589"
+            frameborder="0"
+            allow="autoplay; fullscreen"
+            allowfullscreen
+          ></iframe>
+        </div>
       </div>
       <div class="teaser__description">
         <div class="background"></div>
@@ -124,8 +131,16 @@ export default {
     width: 80vw;
     max-width: 980px;
 
-    & > * {
-      width: 100%;
+    &__fitter {
+      padding-top: 45%;
+      & > * {
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 100%;
+      }
     }
 
     @include media-phone {
