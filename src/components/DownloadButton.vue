@@ -1,5 +1,10 @@
 <template>
-  <a href="#" class="download-button">Télécharger</a>
+  <a
+    href="https://theolemoine.net/storage/projects/mamie-danger.apk"
+    class="download-button"
+    download
+    >Télécharger</a
+  >
 </template>
 
 <style lang="scss">
