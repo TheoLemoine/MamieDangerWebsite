@@ -3,6 +3,8 @@
 </template>
 
 <style lang="scss">
+@import "../scss/_mixins.scss";
+
 .download-button {
   font-family: "panton-black", sans-serif;
   color: #ffeecf;
@@ -16,6 +18,11 @@
   z-index: 1;
 
   filter: drop-shadow(0px 3px 10px rgba(0, 0, 0, 0.4));
+
+  @include media-phone {
+    font-size: 1rem;
+    padding: 8px 15px;
+  }
 
   &::before,
   &::after {

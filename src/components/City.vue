@@ -75,20 +75,44 @@ export default {
 </script>
 
 <style lang="scss">
+@import "../scss/_mixins.scss";
+
 .city {
   margin-top: 20vh;
   display: flex;
 
+  @include media-phone {
+    flex-direction: column-reverse;
+  }
+
   &__left,
   &__right {
     width: 50%;
+
+    @include media-phone {
+      width: 100%;
+    }
   }
 
   &__left {
     position: relative;
+
+    @include media-phone {
+      display: flex;
+      flex-direction: column-reverse;
+      margin-top: 5vh;
+      padding-bottom: 10vh;
+      overflow: hidden;
+    }
+
     &__houses {
       width: 40%;
       margin-left: 8vw;
+      @include media-phone {
+        margin-left: 25vw;
+        margin-top: 5vh;
+        width: 50%;
+      }
     }
     &__text {
       float: right;
@@ -97,6 +121,14 @@ export default {
       min-width: 500px;
       font-size: 1.75rem;
       color: #5959C9;
+
+      @include media-phone {
+        float: none;
+        margin: auto;
+        width: 80%;
+        min-width: 200px;
+        font-size: 1.25rem;
+      }
     }
 
     &__title {
@@ -117,9 +149,16 @@ export default {
     align-items: flex-end;
     position: relative;
     padding-bottom: 30vh;
+    @include media-phone {
+      padding-bottom: 50vh;
+    }
     &__buildings {
       width: 30%;
       margin: 30% 10% 10% 10%;
+
+      @include media-phone {
+        display: none;
+      }
     }
     &__shops {
       position: relative;
@@ -128,6 +167,21 @@ export default {
 
       & > *:nth-of-type(2) {
         width: 130%;
+        @include media-phone {
+          top: 0%;
+          bottom: unset;
+          left: 10%;
+        }
+      }
+
+      & > *:nth-of-type(1) {
+        @include media-phone {
+          display: none;
+        }
+      }
+
+      @include media-phone {
+        width: 80%;
       }
     }
     &__truck {
@@ -136,6 +190,10 @@ export default {
       width: 30%;
       right: 5%;
       bottom: 0;
+
+      @include media-phone {
+        width: 40%;
+      }
     }
     &__background {
       position: absolute;

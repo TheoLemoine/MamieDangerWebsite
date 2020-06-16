@@ -39,24 +39,38 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style scoped lang="scss">
+@import "../scss/_mixins.scss";
+
 .conception {
   position: relative;
   display: flex;
   margin: 20vh 0 65vh 0;
   flex-direction: column;
   align-items: center;
+  @include media-phone {
+    margin: 5vh 0 45vh 0;
+  }
   &__title {
     color: #FCB322;
     font-size: 2.5rem;
     width: 45%;
     max-width: 600px;
+    @include media-phone {
+      width: 80%;
+      font-size: 1.8rem;
+    }
   }
   &__text {
     margin-left: 40vw;
     max-width: 500px;
     font-size: 1.2rem;
     color: white;
+
+    @include media-phone {
+      margin-left: 20vw;
+      width: 70%;
+    }
   }
   &__background {
     position: absolute;
@@ -69,12 +83,25 @@ export default {
     background-color: #D36582;
     opacity: 0.9;
     border-radius: 42px 0 0 42px;
+
+    @include media-phone {
+      margin-left: 0vw;
+      width: 80%;
+      height: 80%;
+      top: -2vh;
+    }
   }
   &__houses {
     position: absolute;
     width: 11vw;
     bottom: -37vh;
     right: 26vw;
+
+    @include media-phone {
+      bottom: -24vh;
+      width: 28vw;
+      right: 28vw;
+    }
   }
 }
 </style>

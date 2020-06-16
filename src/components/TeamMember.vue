@@ -40,14 +40,23 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../scss/_mixins.scss";
+
 .teamMember {
   width: 15vw;
+  @include media-phone {
+    width: 42vw;
+    margin-bottom: 5vh;
+  }
   &__photo {
     width: 100%;
     margin-bottom: 32px;
     img {
       width: 100%;
       border-radius: 50%;
+    }
+    @include media-phone {
+      margin-bottom: 10px;
     }
 
     &::before {
@@ -60,6 +69,11 @@ export default {
       border-radius: 50%;
       background-color: #FCB322;
       transform: translate3d(15px, 10px, 0);
+      @include media-phone {
+        width: 42vw;
+        height: 42vw;
+        transform: translate3d(7px, 5px, 0);
+      }
     }
   }
   &__description {
@@ -72,6 +86,10 @@ export default {
     align-items: center;
     font-size: 1.25rem;
     text-align: center;
+    @include media-phone {
+      font-size: 0.9rem;
+      padding: 3vh 0vh;
+    }
 
     &__name {
       color: #5959C9;

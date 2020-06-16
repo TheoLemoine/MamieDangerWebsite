@@ -78,11 +78,16 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../scss/_mixins.scss";
+
 .puzzle {
   position: relative;
   overflow: hidden;
   z-index: 1;
   padding: 20vh 0 10vh 0;
+  @include media-phone {
+    padding: 3vh 0 22vh 0;
+  }
   .cars {
     position: relative;
     width: 30%;
@@ -102,6 +107,10 @@ export default {
       opacity: 0.8;
       border-radius: 0 30px 30px 0;
     }
+
+    @include media-phone {
+      display: none;
+    }
   }
 
   .description {
@@ -114,6 +123,11 @@ export default {
       font-weight: bold;
       color: #D36582;
     }
+    @include media-phone {
+      padding: 0;
+      margin: auto;
+      width: 80%;
+    }
   }
 
   .caddies {
@@ -121,6 +135,9 @@ export default {
     top: 10vh;
     width: 12vw;
     margin-left: 4vw;
+    @include media-phone {
+      display: none;
+    }
   }
 
   .boxes {
@@ -133,24 +150,42 @@ export default {
       display: inline-block;
       position: absolute;
       width: 8vw;
+      @include media-phone {
+        width: 20vw;
+      }
 
       &:nth-of-type(4) {
         right: 10vw;
+        @include media-phone {
+          right: 40vw;
+          bottom: 1vh;
+        }
       }
 
       &:nth-of-type(3) {
         right: 2vw;
         bottom: 8vh;
+        @include media-phone {
+          right: 8vw;
+          bottom: 3vh;
+        }
       }
 
       &:nth-of-type(2) {
         right: -2vw;
         bottom: 15vh;
+        @include media-phone {
+          bottom: 8vh;
+        }
       }
 
       &:nth-of-type(1) {
         right: 8vw;
         bottom: 15vh;
+        @include media-phone {
+          right: 15vw;
+          bottom: 10vh;
+        }
       }
     }
   }
@@ -159,6 +194,10 @@ export default {
     right: 4vw;
     bottom: 24vh;
     width: 12vw;
+
+    @include media-phone {
+      display: none;
+    }
   }
 }
 </style>

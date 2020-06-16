@@ -59,12 +59,18 @@ export default {
 };
 </script>
 
-<style scoped lang="scss">
+<style lang="scss">
+@import "../scss/_mixins.scss";
+
 .introduction {
   height: 120vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  @include media-phone {
+    height: 80vh;
+  }
 
   .description {
     height: 62%;
@@ -86,6 +92,11 @@ export default {
       strong {
         color: #D36582;
       }
+
+      @include media-phone {
+        font-size: 1.3rem;
+        width: 75%;
+      }
     }
 
     &__background {
@@ -95,6 +106,12 @@ export default {
       height: 100%;
       background-color: #FFEECF;
       border-radius: 0 42px 42px 0;
+
+      @include media-phone {
+        width: 40%;
+        right: 0;
+        border-radius: 42px 0 0 42px;
+      }
     }
 
     &__houses {
@@ -102,6 +119,13 @@ export default {
       width: 20%;
       bottom: 70%;
       left: 5%;
+
+      @include media-phone {
+        width: 50%;
+        left: -25%;
+        bottom: unset;
+        top: -30%;
+      }
     }
   }
 
@@ -110,6 +134,9 @@ export default {
     height: 100%;
     width: 100%;
     overflow: hidden;
+    @include media-phone {
+      display: none;
+    }
 
     &__cross {
       width: 60%;

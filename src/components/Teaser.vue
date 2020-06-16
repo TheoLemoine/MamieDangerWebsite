@@ -49,14 +49,36 @@ export default {
 </script>
 
 <style scoped lang="scss">
+@import "../scss/_mixins.scss";
+
 .teaser {
+  position: relative;
   &__upper {
     display: flex;
     height: 50vh;
+
+    @include media-phone {
+      height: auto;
+    }
+
+    @include media-phone {
+      flex-direction: column;
+    }
+
     &__description,
     &__background {
       position: relative;
       width: 50%;
+      @include media-phone {
+        width: 100%;
+      }
+    }
+
+    &__background {
+      @include media-phone {
+        position: absolute;
+        bottom: 39%;
+      }
     }
     .background {
       position: absolute;
@@ -66,6 +88,10 @@ export default {
       background-color: #FCB322;
       opacity: 0.6;
       border-radius: 0 42px 42px 0;
+
+      @include media-phone {
+        display: none;
+      }
     }
   }
 
@@ -75,12 +101,21 @@ export default {
     align-items: center;
     position: relative;
     z-index: 1;
+
+    @include media-phone {
+      margin-top: 30vh;
+    }
   }
 
   &__title {
     color: #5959C9;
     font-size: 3rem;
     font-weight: bold;
+    text-align: center;
+    @include media-phone {
+      font-size: 2rem;
+      margin: 5px 0;
+    }
   }
 
   &__video {
@@ -91,6 +126,10 @@ export default {
 
     & > * {
       width: 100%;
+    }
+
+    @include media-phone {
+      width: 100vw;
     }
   }
 
@@ -111,6 +150,12 @@ export default {
       font-style: italic;
       font-weight: bold;
 
+      @include media-phone {
+        font-size: 0.9rem;
+        width: 65vw;
+        margin: 12px auto 15px auto;
+      }
+
       em {
         font-weight: normal;
       }
@@ -125,6 +170,12 @@ export default {
       background-color: #D36582;
       opacity: 0.8;
       border-radius: 15px 0 0 15px;
+
+      @include media-phone {
+        top: -25px;
+        height: 150px;
+        width: 85%;
+      }
     }
   }
 }
@@ -132,8 +183,13 @@ export default {
 .character {
   position: absolute;
   width: 25%;
-  left: 10vw;
+  left: 5vw;
   top: -30%;
+  @include media-phone {
+    bottom: 0;
+    top: unset;
+    width: 30%;
+  }
 }
 
 .description {
@@ -145,6 +201,10 @@ export default {
     max-width: 400px;
     font-size: 1.25rem;
     line-height: 1.4;
+
+    @include media-phone {
+      width: 80%;
+    }
 
     strong {
       font-weight: bold;

@@ -63,8 +63,13 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../scss/_mixins.scss";
+
 .team {
   margin-bottom: 20vh;
+  @include media-phone {
+    margin-bottom: 8vh;
+  }
   &__title {
     position: relative;
     padding-left: 12.5vw;
@@ -72,6 +77,11 @@ export default {
     color: #5959C9;
     max-width: 600px;
     margin-bottom: 25vh;
+
+    @include media-phone {
+      font-size: 2.1rem;
+      margin-bottom: 8vh;
+    }
 
     &__background {
       height: 600%;
@@ -82,12 +92,21 @@ export default {
       top: -230%;
       background-color: #FCB322;
       border-radius: 0 42px 42px 0;
+
+      @include media-phone {
+        height: 200%;
+        top: -50%;
+      }
     }
   }
   &__list {
     margin: 0 10vw;
     display: flex;
     justify-content: space-between;
+    @include media-phone {
+      flex-wrap: wrap;
+      margin: 0 5vw;
+    }
   }
 }
 </style>
