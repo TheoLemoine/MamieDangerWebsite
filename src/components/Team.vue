@@ -28,28 +28,28 @@ export default {
         {
           name: "Ronan Champigny",
           role: "Designer",
-          imageFilename: "ronan.png",
+          imageFilename: "ronan.jpg",
           workName: "Vimeo",
           workUrl: "https://vimeo.com/ronanchampigny"
         },
         {
           name: "Marie-Liesse de Solages",
           role: "Designer",
-          imageFilename: "marie-liesse.png",
+          imageFilename: "marie-liesse.jpg",
           workName: "Portfolio",
           workUrl: "https://marieliesse-desolages.github.io/"
         },
         {
           name: "Léon Baudouin",
           role: "Développeur",
-          imageFilename: "leon.png",
+          imageFilename: "leon.jpg",
           workName: "Portfolio",
           workUrl: "https://leonbaudouin.fr"
         },
         {
           name: "Théo Lemoine",
           role: "Développeur",
-          imageFilename: "theo.png",
+          imageFilename: "theo.jpg",
           workName: "Portfolio",
           workUrl: "https://theolemoine.dev"
         }
