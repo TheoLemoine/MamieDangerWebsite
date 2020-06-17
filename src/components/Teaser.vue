@@ -33,9 +33,9 @@
       <div class="teaser__video">
         <div class="teaser__video__fitter">
           <iframe
-            src="https://player.vimeo.com/video/429928276"
+            src="https://www.youtube.com/embed/YcO5JzyPWws"
             frameborder="0"
-            allow="autoplay; fullscreen"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen
           ></iframe>
         </div>
@@ -154,7 +154,7 @@ export default {
     max-width: 980px;
 
     &__fitter {
-      padding-top: 45%;
+      padding-top: 56.25%;
       & > * {
         position: absolute;
         top: 0;
