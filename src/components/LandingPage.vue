@@ -12,6 +12,7 @@
       alt="Mamie Danger"
       class="landing-page__logo"
     />
+    <div class="landing-page__cesure"></div>
   </div>
 </template>
 
@@ -32,7 +33,7 @@ export default {
 @import "../scss/_mixins.scss";
 
 .landing-page {
-  height: 100vh;
+  height: 90vh;
   background: url("../assets/background/PLAN_1.jpg");
   background-size: cover;
   background-position: center;
@@ -40,7 +41,7 @@ export default {
   position: relative;
 
   @include media-phone {
-    height: 100vh;
+    height: 90vh;
     background-position: left top;
   }
 
@@ -57,11 +58,25 @@ export default {
     }
   }
 
+  &__cesure {
+    position: absolute;
+    bottom: -5vh;
+    height: 10vh;
+    width: 100%;
+    background-color: #ffeecf;
+    transform: skewY(-2.9deg);
+  }
+
   &__granny {
     position: absolute;
-    width: 45%;
-    right: -2%;
+    width: 35%;
+    right: 0;
     bottom: -10%;
+
+    @include media-phone {
+      width: 70%;
+      bottom: -5%;
+    }
   }
 
   &__button {
@@ -72,7 +87,7 @@ export default {
     @include media-phone {
       right: unset;
       top: unset;
-      bottom: 20px;
+      bottom: 30vh;
       left: 50%;
       transform: translate3d(-50%, 0, 0);
     }

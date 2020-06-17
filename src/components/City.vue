@@ -1,33 +1,46 @@
 <template>
   <div class="city">
     <div class="city__left">
-      <Perspective
-        imageFolder="houses"
-        :imageFilenames="houses"
-        alt="Maisons"
-        class="city__left__houses"
-        :xOffset="6"
-        :yOffset="18"
-      />
-      <div class="city__left__text">
+      <Parallax :offsetFactor="-1">
+        <Perspective
+          imageFolder="houses"
+          :imageFilenames="houses"
+          alt="Maisons"
+          class="city__left__houses"
+          :xOffset="6"
+          :yOffset="18"
+        />
+      </Parallax>
+      <Parallax
+        direction="down"
+        :speedFactor="0.2"
+        :offsetFactor="-1"
+        class="city__left__text"
+      >
         <h2 class="city__left__title">
           Aidez Mamie Josette à <br /><em>parcourir la ville :</em>
         </h2>
         aller chez le coiffeur, aller acheter ses œufs au supermarché ou encore
         récupérer son pain à la boulangerie.
-      </div>
+      </Parallax>
     </div>
     <div class="city__right">
       <div class="city__right__background"></div>
-      <Perspective
-        imageFolder="houses"
-        :imageFilenames="buildings"
-        alt="Buildings"
+      <Parallax
+        direction="up"
+        :speedFactor="0.15"
+        :offsetFactor="-1"
         class="city__right__buildings"
-        :xOffset="6"
-        :yOffset="-18"
-        :reversed="true"
-      />
+      >
+        <Perspective
+          imageFolder="houses"
+          :imageFilenames="buildings"
+          alt="Buildings"
+          :xOffset="6"
+          :yOffset="-18"
+          :reversed="true"
+        />
+      </Parallax>
       <Perspective
         imageFolder="houses"
         :imageFilenames="shops"
@@ -50,11 +63,13 @@
 <script>
 import Perspective from "./Perspective";
 import WebPicture from "./WebPicture";
+import Parallax from "./Parallax";
 
 export default {
   components: {
     Perspective,
-    WebPicture
+    WebPicture,
+    Parallax
   },
   data() {
     return {
@@ -78,11 +93,14 @@ export default {
 @import "../scss/_mixins.scss";
 
 .city {
-  margin-top: 20vh;
+  position: relative;
+  top: 20vw;
   display: flex;
 
   @include media-phone {
     flex-direction: column-reverse;
+    top: 0;
+    margin-top: 7vh;
   }
 
   &__left,
@@ -186,7 +204,7 @@ export default {
     }
     &__truck {
       position: absolute;
-      z-index: 1;
+      z-index: 2;
       width: 30%;
       right: 5%;
       bottom: 0;

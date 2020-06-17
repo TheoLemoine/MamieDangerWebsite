@@ -1,31 +1,49 @@
 <template>
   <div class="conception">
-    <h2 class="conception__title">
-      Vous souhaitez en savoir plus sur la conception de notre jeu ?
-    </h2>
+    <Parallax
+      class="conception__title__wrapper"
+      :offsetFactor="-1.8"
+      direction="down"
+    >
+      <h2 class="conception__title">
+        Vous souhaitez en savoir plus sur la conception de notre jeu ?
+      </h2>
+    </Parallax>
     <p class="conception__text">
       Pour découvrir tout notre cheminement, les différentes étapes que nous
-      avons suivi pour parvenir à la réalisation de ce jeu, vous pouvez
+      avons suivies pour parvenir à la réalisation de ce jeu, vous pouvez
       télécharger ici <strong>dossier de conception</strong>.
     </p>
-    <Perspective
+    <Parallax
       class="conception__houses"
-      :imageFilenames="houses"
-      imageFolder="houses"
-      alt="Maisons"
-      :xOffset="50"
-      :yOffset="0"
-    />
-    <div class="conception__background"></div>
+      :offsetFactor="-1.2"
+      :speedFactor="0.1"
+      direction="down"
+    >
+      <Perspective
+        :imageFilenames="houses"
+        imageFolder="houses"
+        alt="Maisons"
+        :xOffset="50"
+        :yOffset="0"
+      />
+    </Parallax>
+    <Parallax
+      class="conception__background"
+      :offsetFactor="-1.8"
+      direction="up"
+    ></Parallax>
   </div>
 </template>
 
 <script>
 import Perspective from "./Perspective";
+import Parallax from "./Parallax";
 
 export default {
   components: {
-    Perspective
+    Perspective,
+    Parallax
   },
   data() {
     return {
@@ -54,11 +72,15 @@ export default {
   &__title {
     color: #FCB322;
     font-size: 2.5rem;
-    width: 45%;
-    max-width: 600px;
     @include media-phone {
-      width: 80%;
       font-size: 1.8rem;
+    }
+    &__wrapper {
+      width: 45%;
+      max-width: 600px;
+      @include media-phone {
+        width: 80%;
+      }
     }
   }
   &__text {

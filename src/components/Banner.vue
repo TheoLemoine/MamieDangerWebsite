@@ -1,11 +1,20 @@
 <template>
   <div class="banner">
     <div class="banner__content">
-      <div class="banner__content__text">
+      <Parallax
+        class="banner__content__text"
+        :offsetFactor="-2.2"
+        :speedFactor="0.2"
+      >
         Peu à peu, une <strong>complicité</strong> va se créer entre nos deux héros.
-      </div>
+      </Parallax>
     </div>
-    <div class="banner__characters">
+    <Parallax
+      :offsetFactor="-1.5"
+      direction="down"
+      :speedFactor="0.15"
+      class="banner__characters"
+    >
       <Perspective
         :imageFilenames="characters"
         imageFolder="characters"
@@ -15,16 +24,18 @@
         :yOffset="-20"
         :reversed="true"
       />
-    </div>
+    </Parallax>
   </div>
 </template>
 
 <script>
 import Perspective from "./Perspective";
+import Parallax from "./Parallax";
 
 export default {
   components: {
-    Perspective
+    Perspective,
+    Parallax
   },
   data() {
     return {

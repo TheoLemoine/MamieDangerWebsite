@@ -2,9 +2,16 @@
   <div class="team">
     <h2 class="team__title">
       <div class="team__title__background"></div>
-      Qui se cache derrière mamie danger ?
+      <Parallax direction="down" :speedFactor="0.15" :offsetFactor="-2">
+        Qui se cache derrière mamie danger ?
+      </Parallax>
     </h2>
-    <div class="team__list">
+    <Parallax
+      class="team__list"
+      direction="down"
+      :speedFactor="0.1"
+      :offsetFactor="-2.3"
+    >
       <TeamMember
         v-for="(member, index) in teamMembers"
         :key="index"
@@ -14,12 +21,13 @@
         :workName="member.workName"
         :workUrl="member.workUrl"
       />
-    </div>
+    </Parallax>
   </div>
 </template>
 
 <script>
 import TeamMember from "./TeamMember";
+import Parallax from "./Parallax";
 
 export default {
   data() {
@@ -57,7 +65,8 @@ export default {
     };
   },
   components: {
-    TeamMember
+    TeamMember,
+    Parallax
   }
 };
 </script>

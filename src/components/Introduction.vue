@@ -1,19 +1,32 @@
 <template>
   <div class="introduction">
     <div class="description">
-      <div class="description__background"></div>
+      <Parallax
+        direction="down"
+        :offsetFactor="-0.7"
+        :speedFactor="0.15"
+        class="description__background__parallax"
+      >
+        <div class="description__background"></div>
+      </Parallax>
       <div class="description__text">
         Traverser la rue peut être un vrai
         <strong>parcours du combattant</strong> pour une personne agée...
       </div>
-      <Perspective
-        imageFolder="houses"
-        :imageFilenames="houses"
-        alt="Maisons"
+      <Parallax
+        direction="up"
+        :speedFactor="0.17"
+        :offsetFactor="-0.7"
         class="description__houses"
-        :xOffset="0"
-        :yOffset="16"
-      />
+      >
+        <Perspective
+          imageFolder="houses"
+          :imageFilenames="houses"
+          alt="Maisons"
+          :xOffset="0"
+          :yOffset="16"
+        />
+      </Parallax>
     </div>
     <div class="street">
       <WebPicture
@@ -41,11 +54,13 @@
 <script>
 import Perspective from "./Perspective";
 import WebPicture from "./WebPicture";
+import Parallax from "./Parallax";
 
 export default {
   components: {
     Perspective,
-    WebPicture
+    WebPicture,
+    Parallax
   },
   data() {
     return {
@@ -100,7 +115,6 @@ export default {
     }
 
     &__background {
-      position: absolute;
       width: 30%;
       max-width: 430px;
       height: 100%;
@@ -109,8 +123,14 @@ export default {
 
       @include media-phone {
         width: 40%;
-        right: 0;
+        float: right;
         border-radius: 42px 0 0 42px;
+      }
+
+      &__parallax {
+        width: 100%;
+        height: 100%;
+        position: absolute;
       }
     }
 

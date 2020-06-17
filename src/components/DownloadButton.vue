@@ -39,17 +39,24 @@
     border-radius: 15px;
   }
 
+  &:hover {
+    &::before {
+      box-shadow: 0 20px 20px -20px #00000022 inset,
+        0 -20px 20px -20px #00000022 inset;
+    }
+    &::after {
+      transform: translate3d(-2px, 2px, 0);
+    }
+  }
+
   &::before {
     top: 0;
     left: 0;
     z-index: -1;
-    background: linear-gradient(
-      180deg,
-      #ffeecf -13.22%,
-      #fcb322 22.79%,
-      #fcb322 74.43%,
-      #ffdfab 113.33%
-    );
+    background: #fcb322;
+    transition: box-shadow 200ms ease-out;
+    box-shadow: 0 20px 20px -20px #ffffffc4 inset,
+      0 -20px 20px -20px #ffffffc4 inset;
   }
 
   &::after {
@@ -57,6 +64,7 @@
     background-color: #D36582;
     left: -4px;
     top: 4px;
+    transition: transform 200ms ease-out;
   }
 }
 </style>

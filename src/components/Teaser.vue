@@ -2,7 +2,9 @@
   <div class="teaser">
     <div class="teaser__upper">
       <div class="teaser__upper__background">
-        <div class="background"></div>
+        <Parallax :offsetFactor="-0.5" :speedFactor="0.17" direction="down">
+          <div class="background"></div>
+        </Parallax>
         <WebPicture
           class="character"
           folder="characters"
@@ -10,21 +12,28 @@
           alt="Le personnage principal"
         />
       </div>
-      <div class="teaser__upper__description description">
-        <div class="description__text">
-          Dans <strong class="yellow">Mamie Danger</strong>, vous incarnez un ou
-          une jeune étudiante qui fait la rencontre hasardeuse de
-          <strong class="purple">Mamie Josette</strong>, une mamie qui a bien du
-          mal à traverser la rue seule.
+      <Parallax
+        :offsetFactor="-0.5"
+        direction="up"
+        :speedFactor="0.18"
+        class="teaser__upper__parallax"
+      >
+        <div class="teaser__upper__description description">
+          <div class="description__text">
+            Dans <strong class="yellow">Mamie Danger</strong>, vous incarnez un
+            une jeune étudiante qui fait la rencontre hasardeuse de
+            <strong class="purple">Mamie Josette</strong>, une mamie qui a bien
+            mal à traverser la rue seule.
+          </div>
         </div>
-      </div>
+      </Parallax>
     </div>
     <div class="teaser__lower">
       <h1 class="teaser__title">Teaser du jeu</h1>
       <div class="teaser__video">
         <div class="teaser__video__fitter">
           <iframe
-            src="https://player.vimeo.com/video/345895589"
+            src="https://player.vimeo.com/video/429928276"
             frameborder="0"
             allow="autoplay; fullscreen"
             allowfullscreen
@@ -46,11 +55,13 @@
 <script>
 import WebPicture from "./WebPicture";
 import DownloadButton from "./DownloadButton";
+import Parallax from "./Parallax";
 
 export default {
   components: {
     WebPicture,
-    DownloadButton
+    DownloadButton,
+    Parallax
   }
 };
 </script>
@@ -72,10 +83,21 @@ export default {
       flex-direction: column;
     }
 
-    &__description,
     &__background {
       position: relative;
       width: 50%;
+      @include media-phone {
+        width: 100%;
+      }
+    }
+
+    &__description {
+      position: relative;
+    }
+
+    &__parallax {
+      width: 50%;
+      max-width: 400px;
       @include media-phone {
         width: 100%;
       }
@@ -197,9 +219,9 @@ export default {
 
 .character {
   position: absolute;
-  width: 25%;
-  left: 5vw;
-  top: -30%;
+  width: 35%;
+  left: 8vw;
+  top: -17%;
   @include media-phone {
     bottom: 0;
     top: unset;
@@ -212,7 +234,6 @@ export default {
   justify-content: center;
 
   &__text {
-    width: 50%;
     max-width: 400px;
     font-size: 1.25rem;
     line-height: 1.4;

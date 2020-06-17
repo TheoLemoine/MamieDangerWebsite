@@ -11,11 +11,13 @@
       />
       <div class="cars__background"></div>
     </div>
-    <div class="description">
-      A travers différents niveaux, vous devrez non seulement esquiver les
-      voitures mais aussi dégager le passage, trouver les issues dans ce
-      <strong>véritable casse-tête urbain</strong>.
-    </div>
+    <Parallax :offsetFactor="-0.5" direction="down">
+      <div class="description">
+        A travers différents niveaux, vous devrez non seulement esquiver les
+        voitures mais aussi dégager le passage, trouver les issues dans ce
+        <strong>véritable casse-tête urbain</strong>.
+      </div>
+    </Parallax>
     <Perspective
       imageFolder="street"
       :imageFilenames="trolleys"
@@ -61,12 +63,14 @@
 
 <script>
 import Perspective from "./Perspective";
+import Parallax from "./Parallax";
 import WebPicture from "./WebPicture";
 
 export default {
   components: {
     Perspective,
-    WebPicture
+    WebPicture,
+    Parallax
   },
   data() {
     return {
