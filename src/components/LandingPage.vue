@@ -1,6 +1,6 @@
 <template>
   <div class="landing-page">
-    <DownloadButton class="landing-page__button" />
+    <AppButton class="landing-page__button" />
     <WebPicture
       folder="characters"
       filename="granny_coucou_2048_0092"
@@ -17,12 +17,12 @@
 </template>
 
 <script>
-import DownloadButton from "./DownloadButton";
+import AppButton from "./AppButton";
 import WebPicture from "./WebPicture";
 
 export default {
   components: {
-    DownloadButton,
+    AppButton,
     WebPicture
   },
   name: "LandingPage"
@@ -81,6 +81,7 @@ export default {
 
   &__button {
     position: absolute;
+    z-index: 1;
     right: 48px;
     top: 48px;
 

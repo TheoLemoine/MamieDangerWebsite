@@ -85,6 +85,7 @@ export default {
 
   @include media-phone {
     height: 80vh;
+    padding-top: 5vh;
   }
 
   .description {
@@ -144,7 +145,7 @@ export default {
         width: 50%;
         left: -25%;
         bottom: unset;
-        top: -30%;
+        top: -24vh;
       }
     }
   }

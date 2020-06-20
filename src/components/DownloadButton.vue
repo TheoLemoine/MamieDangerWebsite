@@ -1,8 +1,7 @@
 <template>
   <a
-    href="https://theolemoine.net/storage/projects/mamie-danger.apk"
+    href="https://play.google.com/store/apps/details?id=app.mamiedanger"
     class="download-button"
-    download
     >Télécharger</a
   >
 </template>

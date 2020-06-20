@@ -20,8 +20,8 @@
       >
         <div class="teaser__upper__description description">
           <div class="description__text">
-            Dans <strong class="yellow">Mamie Danger</strong>, vous incarnez un
-            une jeune étudiante qui fait la rencontre hasardeuse de
+            Dans <strong class="yellow">Mamie Danger</strong>, vous incarnez
+            jeune étudiante qui fait la rencontre hasardeuse de
             <strong class="purple">Mamie Josette</strong>, une mamie qui a bien
             mal à traverser la rue seule.
           </div>
@@ -47,20 +47,20 @@
           <em>(uniquement disponible sous Android)</em>
         </div>
       </div>
-      <DownloadButton class="button" />
+      <AppButton class="button" />
     </div>
   </div>
 </template>
 
 <script>
 import WebPicture from "./WebPicture";
-import DownloadButton from "./DownloadButton";
+import AppButton from "./AppButton";
 import Parallax from "./Parallax";
 
 export default {
   components: {
     WebPicture,
-    DownloadButton,
+    AppButton,
     Parallax
   }
 };
@@ -168,6 +168,11 @@ export default {
     @include media-phone {
       width: 100vw;
     }
+  }
+
+  & .button {
+    position: relative;
+    z-index: 1;
   }
 
   &__description {
